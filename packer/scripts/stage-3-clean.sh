@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+echo "================================ stage 2 start =============================="
+
 # clean all
 yum update -y
 yum clean all
