@@ -177,15 +177,16 @@ vagrant up
 а также меняем параметр start_retry_timeout с 1 на 5 минут, иначе получаем ошибку при сборке между 1 и 2 скприптом провиженинга
 и запускаем packer build centos.json
 
+получаем box, загружаем его в vagrant облако
+vagrant cloud publish --release nussnk/centos-7-5-src-shared_folder 1.0 virtualbox /home/nikolay/otus/ohw01/packer/centos-7.7.1908-kernel-5-x86_64-Minimal.box
+удаляем box с диска, чтобы не тянуть его в git
+
+правим Vagrantfile
+указываем наш образ nussnk/centos-7-5-src-shared_folder
 
 
-
-
-правим .gitignore
-добавляем *.box
-*.swp
 
 git add .
-git commit -am "kernel updated"
+git commit -am "update from src and with shared folder"
 git push
 
